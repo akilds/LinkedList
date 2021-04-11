@@ -104,4 +104,20 @@ public class MyLinkedListTest {
 		myLinkedList.printMyNodes();
 		Assert.assertTrue(result);
 	}
+
+   //TEST CASE 8
+   @Test
+	public void linkedListCheck6()
+	{
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyNode<Integer> myNode = new MyNode<>(40);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.searchnAdd(mySecondNode,myNode);
+		myLinkedList.printMyNodes();
+	}
 }

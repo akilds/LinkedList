@@ -102,6 +102,24 @@ public class MyLinkedList {
 		}
 	}
 
+   //USE CASE 8 - Search and Add Node
+   public void searchnAdd(INode myNode, INode newNode)
+	{
+		INode tempNode = head;
+		while(tempNode != null)
+		{
+			if(tempNode == myNode)
+			{
+				insert(myNode,newNode);
+				break;
+			}
+			else
+			{
+				tempNode = tempNode.getNext();
+			}
+		}
+	}
+
 	public void printMyNodes()
 	{
 		StringBuffer myNodes = new StringBuffer("My Nodes : ");
