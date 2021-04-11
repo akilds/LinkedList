@@ -75,6 +75,33 @@ public class MyLinkedList {
 		return tempNode;
 	}
 
+   //USE CASE 7 - Search a Node
+   public boolean findNode(INode myNode)
+	{
+		int check = 0;
+		INode tempNode = head;
+		while(tempNode != null)
+		{
+			if(tempNode == myNode)
+			{
+				check = 1;
+				break;
+			}
+			else
+			{
+				tempNode = tempNode.getNext();
+			}
+		}
+		if(check==1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	public void printMyNodes()
 	{
 		StringBuffer myNodes = new StringBuffer("My Nodes : ");
