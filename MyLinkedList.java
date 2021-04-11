@@ -120,6 +120,26 @@ public class MyLinkedList {
 		}
 	}
 
+   //USE CASE 9 - Delete Node in Between
+   public INode searchnPop(INode newNode,INode myNode)
+	{
+		INode tempNode = head;
+		while(tempNode != null)
+		{
+			if(tempNode == myNode)
+			{
+				myNode = myNode.getNext();
+				newNode.setNext(myNode);
+				break;
+			}
+			else
+			{
+				tempNode = tempNode.getNext();
+			}
+		}
+		return myNode;
+	}
+
 	public void printMyNodes()
 	{
 		StringBuffer myNodes = new StringBuffer("My Nodes : ");

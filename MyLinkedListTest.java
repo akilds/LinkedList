@@ -120,4 +120,22 @@ public class MyLinkedListTest {
 		myLinkedList.searchnAdd(mySecondNode,myNode);
 		myLinkedList.printMyNodes();
 	}
+
+   //TEST CASE 9
+   @Test
+	public void linkedListCheck7()
+	{
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyNode<Integer> myNode = new MyNode<>(40);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.searchnAdd(mySecondNode,myNode);
+		INode result = myLinkedList.searchnPop(mySecondNode,myNode);
+		myLinkedList.printMyNodes();
+		Assert.assertEquals(result,myThirdNode);
+	}
 }
