@@ -70,9 +70,10 @@ public class MyLinkedList {
 		{
 			tempNode = tempNode.getNext();
 		}
+      INode myNode = tempNode.getNext();
 		this.tail = tempNode;
-		tempNode = tempNode.getNext();
-		return tempNode;
+		tempNode.setNext(null);
+		return myNode;
 	}
 
    //USE CASE 7 - Search a Node
@@ -139,6 +140,36 @@ public class MyLinkedList {
 		}
 		return myNode;
 	}
+
+   //USE CASE 10 - Sort LinkedList
+   public void sortList()
+   {
+     INode current = head;
+     INode index = null;
+     int temp;
+     if(this.head == null)
+     {
+       return;
+     }
+     else
+     {
+       while(current != null)
+       {
+         index = current.getNext();
+         while(index != null)
+         {
+           if((Integer)current.getKey() > (Integer)index.getKey())
+           {
+             temp = (Integer)current.getKey();
+             current.setKey(index.getKey());
+             index.setKey(temp);
+           }
+           index = index.getNext();
+          }
+         current = current.getNext();  
+        }
+      }
+   }
 
 	public void printMyNodes()
 	{
