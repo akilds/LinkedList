@@ -3,6 +3,7 @@ import org.junit.Test;
 
 public class MyLinkedListTest {
 
+   //Test CASE 2
 	@Test
 	public void linkedListCheck()
 	{
@@ -17,6 +18,24 @@ public class MyLinkedListTest {
 		boolean result = myLinkedList.head.equals(myThirdNode) &&
 				         myLinkedList.head.getNext().equals(mySecondNode) &&
 				         myLinkedList.tail.equals(myFirstNode);
+		Assert.assertTrue(result);
+	}
+
+   //TEST CASE #
+   @Test
+	public void linkedListCheck1()
+	{
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.printMyNodes();
+		boolean result = myLinkedList.head.equals(myFirstNode) &&
+				         myLinkedList.head.getNext().equals(mySecondNode) &&
+				         myLinkedList.tail.equals(myThirdNode);
 		Assert.assertTrue(result);
 	}
 }

@@ -9,6 +9,7 @@ public class MyLinkedList {
 		this.tail = null;
 	}
 
+   //USE CASE 2 - Adding to LinkedList
 	public void add(INode newNode)
 	{
 		if(this.tail==null)
@@ -24,6 +25,24 @@ public class MyLinkedList {
 			INode tempNode = this.head;
 			this.head = newNode;
 			this.head.setNext(tempNode);
+		}
+	}
+
+   //USE CASE 3 - Adding to LinkedList from Tail
+   public void append(INode myNode)
+	{
+		if(this.head==null)
+		{
+			this.head = myNode;
+		}
+		if(this.tail==null)
+		{
+			this.tail = myNode;
+		}
+		else
+		{
+			this.tail.setNext(myNode);
+			this.tail = myNode;
 		}
 	}
 
